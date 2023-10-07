@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+
+        <title>Welcome To Cedounga</title>
+        </head>
+<<center><body align="center">
+<h2>Welcome To Cedounga Service</h2>
+<p>
+    Choose your employment credentials: User or Admin
+</p>
+<a th:href="@{admin/login}"> Admin Login</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a th:href="@{user/login}"> User Login</a>
+
+
+<div><a th:href="@{/register}">Need to register</a></div>
+</body></center>
+
+
+
+</html>

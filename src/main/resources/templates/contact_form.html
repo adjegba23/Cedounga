@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+
+  <title>Sending Email</title>
+</head>
+<body>
+<div align="center">
+<h2>Email Service</h2>
+
+<form th:action="@{/contact}" method="post"  style="max-width: 600px; margin: 0 auto;" th:object="${contact}">
+    <table>
+        <tr>
+            <td> Full Name: </td>
+            <td><input type="text" class="form-control" th:field="*{fullName}" required></td>
+
+        </tr><tr>
+        <tr>
+            <td> Email: </td>
+            <td><input type="to" class="form-control" th:field="*{to}" required></td>
+
+        </tr><tr><tr>
+        <td> Subject: </td>
+        <td><input type="subject" class="form-control" th:field="*{subject}" required></td>
+
+    </tr><tr>
+        <td> Content: </td>
+        <td><textarea rows="5" class="form-control" th:field="*{content}" required></textarea></td>
+    </tr>
+
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="send" class="btn btn-primary"></td>
+        </tr>
+    </table>
+</form>
+</div>
+</body>
+
+
+</html>

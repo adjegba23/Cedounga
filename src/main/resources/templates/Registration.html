@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+  <title>Registration Page</title>
+</head>
+<body>
+<div align="center"table table-bordered>
+  <h2>Register Here</h2>
+
+  <form th:action="@{/process_register}" method="post" th:object="${user}">
+    <table>
+      <tr>
+        <td> First Name: </td>
+        <td><input type="text" class="form-control" th:field="*{firstName}" required></td>
+
+      </tr><tr>
+      <tr>
+        <td> Last Name: </td>
+        <td><input type="text" class="form-control" th:field="*{lastName}" required></td>
+
+      </tr><tr><tr>
+      <td> Email: </td>
+      <td><input type="email" class="form-control" th:field="*{email}" required></td>
+
+    </tr><tr>
+      <td> Password:</td>
+      <td><input type="password" class="form-control" th:field="*{password}" required></td>
+    </tr>
+      <tr>
+        <td> Role: </td>
+        <td><select  th:field="*{role}" class="form-control">
+          <option value="ADMIN">Admin</option>
+          <option value="USER">User</option>
+        </select></td>
+
+      </tr><tr>
+      <tr><td>&nbsp;</td></tr>
+      <tr>
+        <td colspan="2" align="center"><input type="submit" value="register" class="btn btn-primary"></td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+</body>
+</html>

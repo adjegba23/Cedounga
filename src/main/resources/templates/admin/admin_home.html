@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <title>Admin Page </title>
+</head>
+<body>
+<div align="center">
+    <h2> Welcome to the Admin Control Panel Users Data</h2>
+    <p>
+        Your username is: <b>[[${#request.userPrincipal.principal.username}]]</b>
+    </p>
+    <div >
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th> Email</th>
+                <th> First Name</th>
+                <th> Last Name</th>
+                <th> password</th>
+                <th> Role</th>
+            </tr>
+            </thead>
+            <th:block th:each="user : ${users}">
+                <tr>
+                    <td>[[${user.email}]]</td>
+                    <td>[[${user.firstName}]]</td>
+                    <td>[[${user.lastName}]]</td>
+                    <td>[[${user.password}]]</td>
+                    <td>[[${user.role}]]</td>
+
+                </tr>
+            </th:block>
+
+        </table>
+    </div>
+
+
+
+    <form th:action="@{/admin/logout}" method="post">
+        <input type="submit" value="logout" class="btn btn-primary">
+    </form>
+</div>
+
+</body>
+</html>
